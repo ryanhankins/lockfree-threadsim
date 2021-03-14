@@ -78,6 +78,7 @@ public class Remove extends Method {
 	 case 7:
 	 if(pred.getNext() == curr && pred.getMarked() == false) {
             log("pred.getNext() == curr && pred.getMarked() == false is true");
+	    log("pred.setNext(succ)");
             pred.setNext(succ);
 	 } else {
             log("pred.getNext() == curr && pred.getMarked() == false is false");

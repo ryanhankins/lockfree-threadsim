@@ -48,12 +48,12 @@ public class Add extends Method {
 
 	 case 4:
 	 if (curr.getContents() == item) {
-            log("curr.getContents() == item " + item + " is true");
+            log("curr.getContents(" + curr.getContentsString() + ") == item " + item + " is true");
 	    log("returning false");
             returnValue = false;
 	    completed = true;
 	 } else {
-            log("curr.getContents() == item " + item + " is false");
+            log("curr.getContents(" + curr.getContentsString() + ") == item " + item + " is false");
 	 }
 	 pc++;
 	 break;
@@ -62,9 +62,10 @@ public class Add extends Method {
 	 Node node = new Node(item, curr);
 	 if(pred.getNext() == curr && pred.getMarked() == false) {
             log("pred.getNext() == curr && pred.getMarked() == false is true");
-	    log("returning true");
 	    returnValue = true;
+	    log("pred.setNext(node)");
             pred.setNext(node);
+	    log("returning true");
 	    completed = true;
 	 } else {
             log("pred.getNext() == curr && pred.getMarked() == false is false");

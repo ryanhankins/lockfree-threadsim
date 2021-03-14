@@ -15,34 +15,5 @@ public class Main {
 	 }
       }
       s.Print();
-
-      /*
-      System.out.println("Contains x");
-      Contains c = new Contains(s.getHead(), 'x');
-      while(!c.isCompleted()) {
-         c.step();
-      }
-      System.out.println("Add x");
-      Add a = new Add(s.getHead(), 'x');
-      while(!a.isCompleted()) {
-	a.step();
-      }
-      s.Print();
-      System.out.println("Contains x");
-      c = new Contains(s.getHead(), 'x');
-      while(!c.isCompleted()) {
-         c.step();
-      }
-      System.out.println("Remove x");
-      Remove r = new Remove(s.getHead(), 'x');
-      while(!r.isCompleted()) {
-         r.step();
-      }
-      System.out.println("Contains x");
-      c = new Contains(s.getHead(), 'x');
-      while(!c.isCompleted()) {
-         c.step();
-      }
-      */
    }
 };

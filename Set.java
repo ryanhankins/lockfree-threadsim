@@ -7,10 +7,14 @@ public class Set {
   Node getHead() {
     return head;
   }
-  void Print() {
-    String item;
+  public String toString() {
+    String s = new String();
     for (Node curr = head; curr != null; curr = curr.getNext()) {
-      System.out.println("item=" + curr.getContentsString() + " marked=" + curr.getMarked());
+      s += "item=" + curr.getContentsString() + " marked=" + curr.getMarked();
+      if (curr.getNext() != null) {
+        s += System.lineSeparator();
+      }
     }
+    return s;
   }
 }

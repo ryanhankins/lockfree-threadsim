@@ -31,12 +31,12 @@ public class Thread {
       }
       return m;
    }
-   public void step() {
+   public void step(int line) {
       if (currentMethod == null) {
          currentMethod = randomMethod();
-	 currentMethod.log();
+	 currentMethod.log(line);
       } else {
-	currentMethod.step();
+	currentMethod.step(line);
       }
       if (currentMethod.isCompleted()) {
 	 currentMethod = null;

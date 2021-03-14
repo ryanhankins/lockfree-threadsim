@@ -27,7 +27,7 @@ public class Remove extends Method {
 
 	 case 1:
          if(!f.isCompleted()) {
-            f.step();
+            f.step(getLine());
          } else {
 	   window = f.getReturnStatus();
 	   pc++;
@@ -68,6 +68,7 @@ public class Remove extends Method {
 	 if(curr.getNext() == succ && curr.getMarked() == false) {
             log("curr.getNext() == succ && curr.getMarked() == false is true");
             curr.setMarked(true);
+	    log("curr.setMarked(true)");
 	    pc++;
 	 } else {
             log("curr.getNext() == succ && curr.getMarked() == false is false");

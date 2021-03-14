@@ -28,14 +28,14 @@ public class Find extends Method {
 	 break;
 
 	 case 1:
-         log("curr = pred.getNext(" + pred.getContentsString() + ");");
          curr = pred.getNext();
+         log("curr " + curr.getContentsString() + " = pred.getNext(" + pred.getContentsString() + ");");
 	 pc++;
 	 break;
          
 	 case 2:
-	 log("succ = curr.next.get(marked);");
          succ = curr.getNext();
+	 log("succ " + (succ == null ? "null" : succ.getContentsString()) + " = curr.next.get(marked);");
 	 marked = curr.getMarked();
 	 pc++;
 	 break;

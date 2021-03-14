@@ -8,12 +8,12 @@ public class Main {
       }
       for (int i = 0; i < 10000; i++) {
 	 for (int j = 0; j < nthreads; j++) {
-            threads[j].step();
+            threads[j].step(nthreads * i + j);
 	    if (threads[j].betweenMethods()) {
-               s.Print();
+               System.out.println(s);
 	    }
 	 }
       }
-      s.Print();
+      System.out.println(s);
    }
 };

@@ -27,7 +27,7 @@ public class Add extends Method {
 
 	 case 1:
          if(!f.isCompleted()) {
-            f.step();
+            f.step(getLine());
          } else {
 	   window = f.getReturnStatus();
 	   pc++;

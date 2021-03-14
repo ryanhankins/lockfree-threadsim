@@ -34,7 +34,7 @@ public class Thread {
    public void step() {
       if (currentMethod == null) {
          currentMethod = randomMethod();
-	 currentMethod.log("(" + currentArgument + ")");
+	 currentMethod.log();
       } else {
 	currentMethod.step();
       }

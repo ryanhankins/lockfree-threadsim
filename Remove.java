@@ -14,6 +14,9 @@ public class Remove extends Method {
    public String getName() {
       return "Remove";
    }
+   public String getArgStr() {
+      return String.valueOf(item);
+   }
    public void step() {
       switch(pc) {
          case 0:

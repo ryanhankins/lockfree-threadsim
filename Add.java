@@ -14,6 +14,9 @@ public class Add extends Method {
    public String getName() {
       return "Add";
    }
+   public String getArgStr() {
+      return String.valueOf(item);
+   }
    public void step() {
       switch(pc) {
          case 0:

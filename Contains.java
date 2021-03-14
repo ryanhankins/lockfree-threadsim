@@ -4,7 +4,7 @@ public class Contains extends Method {
    boolean returnValue = false;
    boolean marked;
    private Node head;
-   private int item;
+   private char item;
    Contains(Node h, char i, int t) {
       super(t);
       head = h;
@@ -12,6 +12,9 @@ public class Contains extends Method {
    }
    public String getName() {
       return "Contains";
+   }
+   public String getArgStr() {
+      return String.valueOf(item);
    }
    public void step() {
       switch(pc) {
@@ -23,11 +26,11 @@ public class Contains extends Method {
 
 	 case 1:
 	 if (curr.getContents() < item) {
-            log("curr.getContents() < item is true");
+            log("curr.getContents(" + curr.getContentsString() + ") < item is true");
             curr = curr.getNext();
             log("curr = curr.getNext()");
 	 } else {
-            log("curr.getContents() < item is false");
+            log("curr.getContents(" + curr.getContentsString() + ") < item is false");
 	    pc++;
 	 }
 	 break;

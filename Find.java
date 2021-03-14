@@ -16,6 +16,9 @@ public class Find extends Method {
    public int getIndent() {
       return 2;
    }
+   public String getArgStr() {
+      return String.valueOf(item);
+   }
    public void step() {
       switch(pc) {
          case 0:
@@ -71,12 +74,12 @@ public class Find extends Method {
 
 	 case 6:
 	 if (curr.getContents() >= item) {
-	    log("curr.getContents() >= item is true");
+	    log("curr.getContents(" + curr.getContentsString() + ") >= item is true");
 	    returnValue = new Window(pred, curr);
-	    log("returning pred=" + returnValue.pred.getContents() + " curr=" + returnValue.curr.getContents());
+	    log("returning pred=" + returnValue.pred.getContentsString() + " curr=" + returnValue.curr.getContents());
 	    completed = true;
 	 } else {
-	   log("curr.getContents() >= item is false");
+	   log("curr.getContents(" + curr.getContentsStringString() + ") >= item is false");
 	   pc++;
 	 }
 	 break;

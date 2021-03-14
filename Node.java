@@ -21,4 +21,12 @@ public class Node {
    char getContents() {
       return contents;
    }
+   String getContentsString() {
+      if (contents == Character.MAX_VALUE) {
+         return "max sentinel";
+      } else if (contents == Character.MIN_VALUE) {
+         return "min sentinel";
+      }
+      return String.valueOf(contents);
+   }
 }

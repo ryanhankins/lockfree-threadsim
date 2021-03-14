@@ -4,12 +4,19 @@ abstract class Method {
    Method(int t) {
       threadId = t;
    }
+   protected void log() {
+      log("");
+   }
    protected void log(String s) {
       String indent = new String();
       for(int i = 0; i < getIndent(); i++) {
          indent += " ";
       }
-      System.out.println(threadId + indent + " " + getName() + " " + s);
+      System.out.println(threadId + indent + " " + getName() +
+		         "(" + getArgStr() + ")" + " " + s);
+   }
+   public String getArgStr() {
+      return "";
    }
    public abstract void step();
    public abstract String getName();

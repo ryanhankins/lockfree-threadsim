@@ -76,7 +76,7 @@ public class Find extends Method {
 	 if (curr.getContents() >= item) {
 	    log("curr.getContents(" + curr.getContentsString() + ") >= item is true");
 	    returnValue = new Window(pred, curr);
-	    log("returning pred=" + returnValue.pred.getContentsString() + " curr=" + returnValue.curr.getContents());
+	    log("returning pred=" + returnValue.pred.getContentsString() + " curr=" + returnValue.curr.getContentsString());
 	    completed = true;
 	 } else {
 	   log("curr.getContents(" + curr.getContentsString() + ") >= item is false");

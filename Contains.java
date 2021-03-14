@@ -26,11 +26,11 @@ public class Contains extends Method {
 
 	 case 1:
 	 if (curr.getContents() < item) {
-            log("curr.getContents(" + curr.getContentsString() + ") < item is true");
+            log("curr.getContents(" + curr.getContentsString() + ") < item " + item +" is true");
             curr = curr.getNext();
             log("curr = curr.getNext()");
 	 } else {
-            log("curr.getContents(" + curr.getContentsString() + ") < item is false");
+            log("curr.getContents(" + curr.getContentsString() + ") < item " + item +" is false");
 	    pc++;
 	 }
 	 break;
@@ -44,11 +44,11 @@ public class Contains extends Method {
 
 	 case 3:
 	 if(curr.getContents() == item && !marked) {
-	    log("curr.key == key && !marked[i] is true");
+	    log("curr.key == key " + item + " && !marked[i] is true");
 	    log("returning true");
             returnValue = true;
 	 } else {
-	    log("curr.key == key && !marked[i] is false");
+	    log("curr.key == key " + item + " && !marked[i] is false");
 	    log("returning false");
             returnValue = false;
 	 }

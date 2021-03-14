@@ -48,12 +48,12 @@ public class Remove extends Method {
 
 	 case 4:
 	 if (curr.getContents() != item) {
-            log("curr.getContents() != item is true");
+            log("curr.getContents() != item " + item + " is true");
 	    log("returning false");
             returnValue = false;
 	    completed = true;
 	 } else {
-            log("curr.getContents() != item is false");
+            log("curr.getContents() != item " + item + " is false");
 	 }
 	 pc++;
 	 break;

@@ -74,12 +74,12 @@ public class Find extends Method {
 
 	 case 6:
 	 if (curr.getContents() >= item) {
-	    log("curr.getContents(" + curr.getContentsString() + ") >= item is true");
+	    log("curr.getContents(" + curr.getContentsString() + ") >= item " + item + " is true");
 	    returnValue = new Window(pred, curr);
 	    log("returning pred=" + returnValue.pred.getContentsString() + " curr=" + returnValue.curr.getContentsString());
 	    completed = true;
 	 } else {
-	   log("curr.getContents(" + curr.getContentsString() + ") >= item is false");
+	   log("curr.getContents(" + curr.getContentsString() + ") >= item " + item + " is false");
 	   pc++;
 	 }
 	 break;

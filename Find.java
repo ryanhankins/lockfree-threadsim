@@ -13,6 +13,9 @@ public class Find extends Method {
    public String getName() {
       return "Find";
    }
+   public int getIndent() {
+      return 2;
+   }
    public void step() {
       switch(pc) {
          case 0:

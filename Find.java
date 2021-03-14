@@ -79,7 +79,7 @@ public class Find extends Method {
 	    log("returning pred=" + returnValue.pred.getContentsString() + " curr=" + returnValue.curr.getContents());
 	    completed = true;
 	 } else {
-	   log("curr.getContents(" + curr.getContentsStringString() + ") >= item is false");
+	   log("curr.getContents(" + curr.getContentsString() + ") >= item is false");
 	   pc++;
 	 }
 	 break;

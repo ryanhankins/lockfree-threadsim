@@ -28,7 +28,7 @@ public class Find extends Method {
 	 break;
 
 	 case 1:
-         log("curr = pred.getNext();");
+         log("curr = pred.getNext(" + pred.getContentsString() + ");");
          curr = pred.getNext();
 	 pc++;
 	 break;

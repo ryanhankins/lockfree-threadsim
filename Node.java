@@ -23,10 +23,13 @@ public class Node {
    }
    String getContentsString() {
       if (contents == Character.MAX_VALUE) {
-         return "max sentinel";
+         return "max";
       } else if (contents == Character.MIN_VALUE) {
-         return "min sentinel";
+         return "min";
       }
       return String.valueOf(contents);
+   }
+   String getMarkedString() {
+      return marked ? "true" : "false";
    }
 }

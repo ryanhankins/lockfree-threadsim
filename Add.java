@@ -61,14 +61,14 @@ public class Add extends Method {
 	 case 5:
 	 Node node = new Node(item, curr);
 	 if(pred.getNext() == curr && pred.getMarked() == false) {
-            log("pred.getNext() == curr && pred.getMarked() == false is true");
+            log("pred.getNext(" + pred.getNext().getContentsString() + ") == curr && pred.getMarked() == false is true");
 	    returnValue = true;
 	    log("pred.setNext(node)");
             pred.setNext(node);
 	    log("returning true");
 	    completed = true;
 	 } else {
-            log("pred.getNext() == curr && pred.getMarked() == false is false");
+            log("pred.getNext(" + pred.getNext().getContentsString() + ") == curr " + curr.getContentsString() + " && pred.getMarked(" + pred.getMarkedString() + ") == false is false");
 	 }
 	 pc = 0;
 	 break;

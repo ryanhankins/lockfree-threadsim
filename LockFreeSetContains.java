@@ -1,11 +1,11 @@
-public class Contains extends Method {
+public class LockFreeSetContains extends Method {
    private int pc = 0;
-   private Node curr = null, succ = null;
+   private LockFreeSetNode curr = null, succ = null;
    boolean returnValue = false;
    boolean marked;
-   private Node head;
+   private LockFreeSetNode head;
    private char item;
-   Contains(Node h, char i, int t) {
+   LockFreeSetContains(LockFreeSetNode h, char i, int t) {
       super(t);
       head = h;
       item = i;

@@ -1,12 +1,12 @@
-public class Remove extends Method {
+public class LockFreeSetRemove extends Method {
    private int pc = 0;
-   private Node pred = null, curr = null, succ = null;
-   Find f;
-   Window window;
+   private LockFreeSetNode pred = null, curr = null, succ = null;
+   LockFreeSetFind f;
+   LockFreeSetWindow window;
    boolean returnValue = false;
-   private Node head;
+   private LockFreeSetNode head;
    private char item;
-   Remove(Node h, char i, int t) {
+   LockFreeSetRemove(LockFreeSetNode h, char i, int t) {
       super(t);
       head = h;
       item = i;
@@ -21,14 +21,14 @@ public class Remove extends Method {
       switch(pc) {
          case 0:
          log("Invoking Find(head, " + item + ")");
-         f = new Find(head, item, threadId);
+         f = new LockFreeSetFind(head, item, threadId);
 	 pc++;
 	 break;
 
 	 case 1:
-         if(!f.isCompleted()) {
-            f.step(getLine());
-         } else {
+    if(!f.isCompleted()) {
+       f.step(getLine());
+   } else {
 	   window = f.getReturnStatus();
 	   pc++;
 	 }

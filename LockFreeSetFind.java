@@ -1,11 +1,11 @@
-public class Find extends Method {
+public class LockFreeSetFind extends Method {
    private int pc = 0;
-   private Node pred = null, curr = null, succ = null;
+   private LockFreeSetNode pred = null, curr = null, succ = null;
    boolean marked;
-   Window returnValue;
-   private Node head;
+   LockFreeSetWindow returnValue;
+   private LockFreeSetNode head;
    Character item;
-   Find(Node h, char i, int t) {
+   LockFreeSetFind(LockFreeSetNode h, char i, int t) {
       super(t);
       head = h;
       item = i;
@@ -75,7 +75,7 @@ public class Find extends Method {
 	 case 6:
 	 if (curr.getContents() >= item) {
 	    log("curr.getContents(" + curr.getContentsString() + ") >= item " + item + " is true");
-	    returnValue = new Window(pred, curr);
+	    returnValue = new LockFreeSetWindow(pred, curr);
 	    log("returning pred=" + returnValue.pred.getContentsString() + " curr=" + returnValue.curr.getContentsString());
 	    completed = true;
 	 } else {
@@ -98,7 +98,7 @@ public class Find extends Method {
 
       }
    }
-   Window getReturnStatus() {
+   LockFreeSetWindow getReturnStatus() {
       return returnValue;
    }
 };

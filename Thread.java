@@ -1,48 +1,42 @@
 import java.util.Random;
 
-public class Thread {
-   Node head;
-   Random rand = new Random();
+public abstract class Thread {
    Method currentMethod;
-   int threadId;
-   char currentArgument;
-   public Thread(Node h, int id) {
-      head = h;
+   private int threadId;
+   //static final int nthreads = 10;
+   public Thread(int id) {
       threadId = id;
    }
-   public Method randomMethod() {
-      Method m = null;
-      currentArgument = (char)(rand.nextInt(26) + 'a');
-      switch(rand.nextInt(3)) {
-	 case 0:
-         m = new Add(head, currentArgument, threadId);
-         break;
-
-	 case 1:
-         m = new Remove(head, currentArgument, threadId);
-         break;
-
-         case 2:
-         m = new Contains(head, currentArgument, threadId);
-         break;
-
-         case 3:
-         System.out.println("no method found");
-      }
-      return m;
+   /* public int getNewThreadId() {
+      return threadId++;
+   }*/
+   public int getThreadId() {
+      return threadId;
    }
+   public abstract Method nextMethod();
+   public abstract String getState();
    public void step(int line) {
       if (currentMethod == null) {
-         currentMethod = randomMethod();
-	 currentMethod.log(line);
+         currentMethod = nextMethod();
+         currentMethod.log(line);
       } else {
-	currentMethod.step(line);
+         currentMethod.step(line);
       }
       if (currentMethod.isCompleted()) {
-	 currentMethod = null;
+         currentMethod = null;
       }
    }
    public boolean betweenMethods() {
       return currentMethod == null;
+   }
+   static void iterate(Thread[] threads) {
+      for (int i = 0; i < 10000; i++) {
+         for (int j = 0; j < threads.length; j++) {
+            threads[j].step(threads.length * i + j);
+            if (threads[j].betweenMethods()) {
+               System.out.println(threads[j].getState());
+	    }
+	 }
+      }
    }
 }

@@ -1,15 +1,15 @@
-public class Node {
+public class LockFreeSetNode {
    private char contents;
-   private Node next;
+   private LockFreeSetNode next;
    private boolean marked;
-   Node(char c, Node n) {
+   LockFreeSetNode(char c, LockFreeSetNode n) {
       contents = c;
       next = n;
    }
-   Node getNext() {
+   LockFreeSetNode getNext() {
       return next;
    }
-   void setNext(Node n) {
+   void setNext(LockFreeSetNode n) {
       next = n;
    }
    boolean getMarked() {

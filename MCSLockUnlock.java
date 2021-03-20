@@ -10,10 +10,6 @@ class MCSLockUnlock extends Method {
       myNode = q;
       lock = l;
    }
-   public void step(int l) {
-      line = l;
-      step();
-   }
    public void step() {
       switch(pc) {
          case 0:

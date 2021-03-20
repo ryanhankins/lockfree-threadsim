@@ -12,15 +12,15 @@ class MCSLockLock extends Method {
    public void step() {
       switch(pc) {
          case 0:
-         log("qnode = myNode");
          qnode = myNode;
+         log("qnode " + qnode + " = myNode");
          pc++;
          break;
 
          case 1:
-         log("pred = tail.getAndSet(qnode)");
          pred = lock.getTail();
          lock.setTail(qnode);
+         log("pred " + pred + " = tail.getAndSet(qnode)");
          pc++;
          break;
 
